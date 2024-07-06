@@ -1,1 +1,0 @@
-export const BACKEND_URL = "https://backend-zoo-production.up.railway.app"
