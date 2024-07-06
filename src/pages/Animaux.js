@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
+import { BACKEND_URL } from '../../constante';
 
 const Animaux = () => {
 
@@ -16,7 +17,7 @@ const Animaux = () => {
     const [id, setId] = useState("");
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
@@ -42,7 +43,7 @@ const Animaux = () => {
 
     const augmenterVue = () => {
         try {
-            axios.put(`http://localhost:3002/augmenter-vues-animal`, { prenom })
+            axios.put(BACKEND_URL + `/augmenter-vues-animal`, { prenom })
         } catch (error) {
             console.log(error);
         }
@@ -70,7 +71,7 @@ const Animaux = () => {
                     <div className="animal" key={index}>
                         <div className="div_zoo_animaux" >
                             <img className="image_zoo_animaux"
-                                src={`http://localhost:3002/image/${animal.image}`}
+                                src={BACKEND_URL + `/image/${animal.image}`}
                                 alt={animal.prenom}
                                 onClick={() => {
                                     setPrenom(animal.prenom)
