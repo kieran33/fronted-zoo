@@ -10,7 +10,7 @@ const ModificationPersonnels = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/personnels");
+        const reponse = await axios.get(BACKEND_URL + "/personnels");
         setData(reponse.data);
     };
 

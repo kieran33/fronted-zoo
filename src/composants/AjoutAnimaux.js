@@ -19,7 +19,7 @@ const AjoutAnimaux = () => {
     });
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/habitats");
+        const reponse = await axios.get(BACKEND_URL + "/habitats");
         setData(reponse.data);
     };
 
@@ -81,9 +81,9 @@ const AjoutAnimaux = () => {
 
         if (token) {
             try {
-                const reponse = axios.post("http://localhost:3002/ajout-animaux", formData, { headers })
+                const reponse = axios.post(BACKEND_URL + "/ajout-animaux", formData, { headers })
                 if (reponse) {
-                    const reponse_mongoDB = axios.post("http://localhost:3002/ajout-animaux-vues", { prenomAnimal })
+                    const reponse_mongoDB = axios.post(BACKEND_URL + "/ajout-animaux-vues", { prenomAnimal })
                     if (reponse_mongoDB) {
                         alert(`Animal ${nouvelAnimal.prenom} ajouté avec succès`);
                         prenom.current.value = "";

@@ -57,7 +57,7 @@ const AjoutHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.post("http://localhost:3002/ajout-habitats", formData, { headers })
+                const reponse = axios.post(BACKEND_URL + "/ajout-habitats", formData, { headers })
                 if (reponse) {
                     alert(`Nouvel habitat ${nouvelHabitat.nom} ajouté avec succès`);
                     nom.current.value = "";

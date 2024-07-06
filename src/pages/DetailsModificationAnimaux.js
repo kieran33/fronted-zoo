@@ -27,12 +27,12 @@ const DetailsModificationAnimaux = () => {
     const image = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
     const loadDataHabitat = async () => {
-        const reponse = await axios.get("http://localhost:3002/habitats");
+        const reponse = await axios.get(BACKEND_URL + "/habitats");
         setDataHabitat(reponse.data);
     };
 
@@ -92,12 +92,12 @@ const DetailsModificationAnimaux = () => {
         formData.append("image", animal.image);
 
         if (token) {
-            const reponse = axios.put(`http://localhost:3002/animaux/modifier/${id}`, formData, { headers })
+            const reponse = axios.put(BACKEND_URL + `/animaux/modifier/${id}`, formData, { headers })
 
             if (reponse) {
-                axios.put(`http://localhost:3002/animaux-nourriture/modifier/${prenom}`, { nouveauPrenom })
-                axios.put(`http://localhost:3002/animaux-soins/modifier/${prenom}`, { nouveauPrenom })
-                await axios.put(`http://localhost:3002/modifier-animaux-vues/${prenom}`, { nouveauPrenom })
+                axios.put(BACKEND_URL + `/animaux-nourriture/modifier/${prenom}`, { nouveauPrenom })
+                axios.put(BACKEND_URL + `/animaux-soins/modifier/${prenom}`, { nouveauPrenom })
+                await axios.put(BACKEND_URL + `/modifier-animaux-vues/${prenom}`, { nouveauPrenom })
                 alert(`Animal ${animal.prenom} modifié avec succès`);
             } else {
                 alert("La requête à échoué");

@@ -13,12 +13,12 @@ const EtatAnimaux = () => {
     const [dataSoins, setDataSoins] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
     const loadDataSoins = async () => {
-        const reponse = await axios.get("http://localhost:3002/soins-animaux");
+        const reponse = await axios.get(BACKEND_URL + "/soins-animaux");
         setDataSoins(reponse.data);
     };
 
@@ -90,7 +90,7 @@ const EtatAnimaux = () => {
                                             animal_soins.prenom === animal.prenom ?
                                                 < div className="div_zoo_etat">
                                                     <img className="image_zoo_animaux_etat"
-                                                        src={`http://localhost:3002/image/${animal.image}`}
+                                                        src={BACKEND_URL + `/image/${animal.image}`}
                                                         alt={animal.prenom}>
                                                     </img>
                                                     <p className="titre_service">Etat : {animal_soins.etat}</p>
@@ -115,7 +115,7 @@ const EtatAnimaux = () => {
                                                 animal_soins.prenom === animal.prenom ?
                                                     < div className="div_zoo_etat" >
                                                         <img className="image_zoo_animaux_etat"
-                                                            src={`http://localhost:3002/image/${animal.image}`}
+                                                            src={BACKEND_URL + `/image/${animal.image}`}
                                                             alt={animal.prenom}>
                                                         </img>
                                                         <p className="titre_service">Etat : {animal_soins.etat}</p>
@@ -139,7 +139,7 @@ const EtatAnimaux = () => {
                                                 animal_soins.prenom === animal.prenom ?
                                                     < div className="div_zoo_etat">
                                                         <img className="image_zoo_animaux_etat"
-                                                            src={`http://localhost:3002/image/${animal.image}`}
+                                                            src={BACKEND_URL + `/image/${animal.image}`}
                                                             alt={animal.prenom}>
                                                         </img>
                                                         <p className="titre_service">Etat : {animal_soins.etat}</p>

@@ -16,12 +16,12 @@ const DetailsHabitats = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/habitats')
+        const reponse = await axios.get(BACKEND_URL + '/habitats')
         setData(reponse.data);
     }
 
     const loadDataAnimaux = async () => {
-        const reponse = await axios.get('http://localhost:3002/animaux')
+        const reponse = await axios.get(BACKEND_URL + '/animaux')
         setDataAnimaux(reponse.data);
     }
 
@@ -43,7 +43,7 @@ const DetailsHabitats = () => {
                 <div className="animal" >
                     <h2 className="titre_service">{dataHabitat.nom}</h2>
                     <img className="image_zoo_details"
-                        src={`http://localhost:3002/image/${dataHabitat.image}`}
+                        src={BACKEND_URL + `/image/${dataHabitat.image}`}
                         alt={dataHabitat.nom}>
                     </img>
                     <p className="paragraphe">{dataHabitat.description}</p>
@@ -62,7 +62,7 @@ const DetailsHabitats = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/animaux/${animal.id}/${animal.prenom}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={`http://localhost:3002/image/${animal.image}`}
+                                            src={BACKEND_URL + `/image/${animal.image}`}
                                             alt={animal.prenom}>
                                         </img>
                                     </Link>
@@ -78,7 +78,7 @@ const DetailsHabitats = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }} >
                                         <img className="image_zoo_animaux"
-                                            src={`http://localhost:3002/image/${habitat.image}`}
+                                            src={BACKEND_URL + `/image/${habitat.image}`}
                                             alt={habitat.nom}
                                             onClick={() => {
                                                 setTimeout(() => {

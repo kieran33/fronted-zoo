@@ -15,7 +15,7 @@ const QuestionsVisiteurs = () => {
     const token = localStorage.getItem("token");
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/questions')
+        const reponse = await axios.get(BACKEND_URL + '/questions')
         setData(reponse.data)
     }
 

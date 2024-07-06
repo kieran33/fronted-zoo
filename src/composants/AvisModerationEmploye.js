@@ -13,7 +13,7 @@ const AvisModerationEmploye = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/avis-non-verif')
+        const reponse = await axios.get(BACKEND_URL + '/avis-non-verif')
         setData(reponse.data)
     }
 
@@ -31,7 +31,7 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement cet avis ?")) {
-                axios.delete(`http://localhost:3002/supprimer/avis-non-verif/${id}`, { headers });
+                axios.delete(BACKEND_URL + `/supprimer/avis-non-verif/${id}`, { headers });
                 setTimeout(() => loadData(), 500);
             }
         } else {
@@ -49,7 +49,7 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement tous ces avis ?")) {
-                axios.delete(`http://localhost:3002/supprimer/avis-verif`, { headers });
+                axios.delete(BACKEND_URL + `/supprimer/avis-verif`, { headers });
                 setTimeout(() => loadData(), 500);
             }
         } else {
@@ -68,10 +68,10 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             try {
-                const reponse = await axios.post('http://localhost:3002/ajout-avis-verif', { pseudo, message }, { headers });
+                const reponse = await axios.post(BACKEND_URL + '/ajout-avis-verif', { pseudo, message }, { headers });
                 alert('Avis approuvé avec succès')
                 if (reponse.data) {
-                    axios.delete(`http://localhost:3002/supprimer/avis-non-verif/${id}`, { headers });
+                    axios.delete(BACKEND_URL + `/supprimer/avis-non-verif/${id}`, { headers });
                     setTimeout(() => loadData(), 500);
                 }
             } catch (error) {

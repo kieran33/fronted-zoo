@@ -8,7 +8,7 @@ const AvisVisiteur = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/avis-verif')
+        const reponse = await axios.get(BACKEND_URL + '/avis-verif')
         setData(reponse.data)
     }
 

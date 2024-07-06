@@ -25,7 +25,7 @@ const DonnerAvis = () => {
     const AjouterAvis = () => {
 
         try {
-            const reponse = axios.post('http://localhost:3002/ajout-avis-non-verif', nouvelAvis, {
+            const reponse = axios.post(BACKEND_URL + '/ajout-avis-non-verif', nouvelAvis, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

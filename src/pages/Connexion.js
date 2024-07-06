@@ -15,7 +15,7 @@ const Connexion = () => {
     const seConnecter = async (e) => {
         e.preventDefault();
         try {
-            const reponse = await axios.post("http://localhost:3002/connexion", { nom_utilisateur, mot_de_passe });
+            const reponse = await axios.post(BACKEND_URL + "/connexion", { nom_utilisateur, mot_de_passe });
             if (reponse.data.success) {
                 localStorage.setItem('role', reponse.data.role);
                 localStorage.setItem('connecté', reponse.data.success);

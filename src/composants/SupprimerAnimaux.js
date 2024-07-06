@@ -10,7 +10,7 @@ const SupprimerAnimaux = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
@@ -29,12 +29,12 @@ const SupprimerAnimaux = () => {
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement cet animal ?")) {
 
-                const reponse = axios.delete(`http://localhost:3002/animaux/supprimer/${id}`, { headers });
+                const reponse = axios.delete(BACKEND_URL + `/animaux/supprimer/${id}`, { headers });
 
                 if (reponse) {
-                    await axios.delete(`http://localhost:3002/supprimer-animaux-vues/${prenom}`);
-                    await axios.delete(`http://localhost:3002/animaux-soins/supprimer/${prenom}`);
-                    await axios.delete(`http://localhost:3002/animaux-nourriture/supprimer/${prenom}`);
+                    await axios.delete(BACKEND_URL + `/supprimer-animaux-vues/${prenom}`);
+                    await axios.delete(BACKEND_URL + `/animaux-soins/supprimer/${prenom}`);
+                    await axios.delete(BACKEND_URL + `/animaux-nourriture/supprimer/${prenom}`);
                 }
                 else {
                     alert("La requête à échoué");
@@ -61,7 +61,7 @@ const SupprimerAnimaux = () => {
                     <div className="animal" key={index}>
                         <div className="div_zoo_animaux" style={{ marginBottom: "40px" }}>
                             <img className="image_zoo_animaux"
-                                src={`http://localhost:3002/image/${animal.image}`}
+                                src={BACKEND_URL + `/image/${animal.image}`}
                                 alt={animal.prenom}></img>
                             <div className="text_zoo" style={{ textTransform: 'capitalize' }}>{animal.prenom}</div>
                         </div>

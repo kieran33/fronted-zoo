@@ -31,7 +31,7 @@ const Contact = () => {
         e.preventDefault();
 
         try {
-            const reponse = axios.post('http://localhost:3002/envoyer-questions', nouvelleQuestion, {
+            const reponse = axios.post(BACKEND_URL + '/envoyer-questions', nouvelleQuestion, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

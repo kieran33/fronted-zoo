@@ -11,7 +11,7 @@ const ModificationServicesEmploye = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/services");
+        const reponse = await axios.get(BACKEND_URL + "/services");
         setData(reponse.data);
     };
 
@@ -35,7 +35,7 @@ const ModificationServicesEmploye = () => {
                         <div className="div_zoo_service">
                             <Link to={`/dashboard-employe/modifier-services/${service.id}`} style={{ opacity: "1" }}>
                                 <img className="image_zoo_service"
-                                    src={`http://localhost:3002/image/${service.image}`}
+                                    src={BACKEND_URL + `/image/${service.image}`}
                                     alt={service.nom}>
                                 </img>
                             </Link>

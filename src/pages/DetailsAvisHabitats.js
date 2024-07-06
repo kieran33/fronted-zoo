@@ -20,7 +20,7 @@ const DetailsAvisHabitats = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/habitats");
+        const reponse = await axios.get(BACKEND_URL + "/habitats");
         setData(reponse.data);
     };
 
@@ -68,7 +68,7 @@ const DetailsAvisHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(`http://localhost:3002/avis-habitats/${id}`, formData, { headers })
+                const reponse = axios.put(BACKEND_URL + `/avis-habitats/${id}`, formData, { headers })
                 if (reponse) {
                     alert(`Avis pour l'état de l'habitat ${habitat.nom} envoyé avec succès`);
                     etat.current.value = "";

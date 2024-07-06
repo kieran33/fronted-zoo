@@ -20,7 +20,7 @@ const DetailsModificationPersonnels = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/personnels");
+        const reponse = await axios.get(BACKEND_URL + "/personnels");
         setData(reponse.data);
     };
 
@@ -67,7 +67,7 @@ const DetailsModificationPersonnels = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(`http://localhost:3002/personnels/modifier/${id}`, personnel, { headers })
+                const reponse = axios.put(BACKEND_URL + `/personnels/modifier/${id}`, personnel, { headers })
                 if (reponse) {
                     alert(`Compte personnel ${personnel.nom_utilisateur} modifié avec succès`);
                 }

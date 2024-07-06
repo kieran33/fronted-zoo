@@ -10,7 +10,7 @@ const ModificationAnimaux = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
@@ -34,7 +34,7 @@ const ModificationAnimaux = () => {
                         <div className="div_zoo_animaux">
                             <Link to={`/dashboard-admin/modifier-animaux/${animal.id}/${animal.prenom}`} style={{ opacity: "1" }}>
                                 <img className="image_zoo_animaux"
-                                    src={`http://localhost:3002/image/${animal.image}`}
+                                    src={BACKEND_URL + `/image/${animal.image}`}
                                     alt={animal.prenom}>
                                 </img>
                             </Link>

@@ -58,7 +58,7 @@ const AjoutServices = () => {
         formData.append("image", nouveauService.image);
 
         if (token) {
-            const reponse = axios.post("http://localhost:3002/ajout-services", formData, { headers })
+            const reponse = axios.post(BACKEND_URL + "/ajout-services", formData, { headers })
             /*.then(reponse => {
                 console.log(reponse.data);
             })

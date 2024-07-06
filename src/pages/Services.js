@@ -9,7 +9,7 @@ const Services = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/services");
+        const reponse = await axios.get(BACKEND_URL + "/services");
         setData(reponse.data);
     };
 
@@ -25,7 +25,7 @@ const Services = () => {
                 {data.map((service, index) => (
                     <div className="service" key={index}>
                         <p className="titre_service" style={{ textTransform: 'capitalize' }}>{service.nom}</p>
-                        <img className="image_service" src={`http://localhost:3002/image/${service.image}`} alt={service.nom}></img>
+                        <img className="image_service" src={BACKEND_URL + `/image/${service.image}`} alt={service.nom}></img>
                         <p className="paragraphe">{service.description}</p>
                     </div>
                 ))}

@@ -20,7 +20,7 @@ const DetailsModificationHabitats = () => {
     const image = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/habitats");
+        const reponse = await axios.get(BACKEND_URL + "/habitats");
         setData(reponse.data);
     };
 
@@ -74,7 +74,7 @@ const DetailsModificationHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(`http://localhost:3002/habitats/modifier/${id}`, formData, { headers })
+                const reponse = axios.put(BACKEND_URL + `/habitats/modifier/${id}`, formData, { headers })
                 if (reponse) {
                     alert(`Habitat ${habitat.nom} modifié avec succès`);
                 }

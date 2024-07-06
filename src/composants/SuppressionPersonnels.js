@@ -10,7 +10,7 @@ const SuppressionPersonnels = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/personnels");
+        const reponse = await axios.get(BACKEND_URL + "/personnels");
         setData(reponse.data);
     };
 
@@ -28,7 +28,7 @@ const SuppressionPersonnels = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement ce compte personnel ?")) {
-                axios.delete(`http://localhost:3002/personnels/supprimer/${id}`, { headers });
+                axios.delete(BACKEND_URL + `/personnels/supprimer/${id}`, { headers });
             };
         } else {
             alert("Vous n'êtes pas autorisé à effectuer cette action");

@@ -20,7 +20,7 @@ const DetailsModificationHoraires = () => {
     const heure_fermeture = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/horaires");
+        const reponse = await axios.get(BACKEND_URL + "/horaires");
         setData(reponse.data);
     };
 
@@ -68,7 +68,7 @@ const DetailsModificationHoraires = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(`http://localhost:3002/horaires/modifier/${id}`, horaire, { headers })
+                const reponse = axios.put(BACKEND_URL + `/horaires/modifier/${id}`, horaire, { headers })
                 if (reponse) {
                     alert(`Horaire pour le ${horaire.jour} modifier avec succès`)
                     retourDashboardAdminHoraires();

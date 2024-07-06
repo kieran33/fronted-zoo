@@ -22,7 +22,7 @@ const DetailsAjoutNourritureAnimaux = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
@@ -74,7 +74,7 @@ const DetailsAjoutNourritureAnimaux = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(`http://localhost:3002/ajout-nourriture/${prenom}`, formData, { headers })
+                const reponse = axios.put(BACKEND_URL + `/ajout-nourriture/${prenom}`, formData, { headers })
                 if (reponse) {
                     alert(`Nourriture pour l'animal ${animal.prenom} ajouté avec succès`);
                     nourriture.current.value = "";

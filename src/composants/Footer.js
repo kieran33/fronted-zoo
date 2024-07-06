@@ -7,7 +7,7 @@ const Footer = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/horaires')
+        const reponse = await axios.get(BACKEND_URL + '/horaires')
         setData(reponse.data)
     }
 

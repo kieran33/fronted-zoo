@@ -29,17 +29,17 @@ const DetailsAnimaux = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get('http://localhost:3002/animaux')
+        const reponse = await axios.get(BACKEND_URL + '/animaux')
         setData(reponse.data);
     };
 
     const loadDataHabitat = async () => {
-        const reponse = await axios.get('http://localhost:3002/habitats')
+        const reponse = await axios.get(BACKEND_URL + '/habitats')
         setDataHabitat(reponse.data);
     };
 
     const loadDataEtat = async () => {
-        const reponse = await axios.get('http://localhost:3002/soins-animaux')
+        const reponse = await axios.get(BACKEND_URL + '/soins-animaux')
         setDataEtat(reponse.data);
     };
 
@@ -68,7 +68,7 @@ const DetailsAnimaux = () => {
 
     const augmenterVue = () => {
         try {
-            axios.put(`http://localhost:3002/augmenter-vues-animal`, { prenomNouvelAnimal })
+            axios.put(BACKEND_URL + `/augmenter-vues-animal`, { prenomNouvelAnimal })
         } catch (error) {
             console.log(error);
         }
@@ -99,7 +99,7 @@ const DetailsAnimaux = () => {
                 <div className="animal" >
                     <h2 className="titre_service">{dataAnimal.prenom}</h2>
                     <img className="image_zoo_details"
-                        src={`http://localhost:3002/image/${dataAnimal.image}`}
+                        src={BACKEND_URL + `/image/${dataAnimal.image}`}
                         alt={dataAnimal.prenom}>
                     </img>
                     <p className="paragraphe">{dataAnimal.description}</p>
@@ -131,7 +131,7 @@ const DetailsAnimaux = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={`http://localhost:3002/image/${habitat.image}`}
+                                            src={BACKEND_URL + `/image/${habitat.image}`}
                                             alt={habitat.nom}>
                                         </img>
                                     </Link>
@@ -146,7 +146,7 @@ const DetailsAnimaux = () => {
                             <div className="animal" key={index}>
                                 <div className="div_zoo_animaux">
                                     <img className="image_zoo_animaux"
-                                        src={`http://localhost:3002/image/${animal.image}`}
+                                        src={BACKEND_URL + `/image/${animal.image}`}
                                         alt={animal.prenom}
                                         onClick={() => {
                                             setPrenomNouvelAnimal(animal.prenom)
@@ -165,7 +165,7 @@ const DetailsAnimaux = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={`http://localhost:3002/image/${habitat.image}`}
+                                            src={BACKEND_URL + `/image/${habitat.image}`}
                                             alt={habitat.nom}>
                                         </img>
                                     </Link>

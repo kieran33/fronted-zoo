@@ -24,12 +24,12 @@ const DetailsCompteRenduAnimaux = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get("http://localhost:3002/animaux");
+        const reponse = await axios.get(BACKEND_URL + "/animaux");
         setData(reponse.data);
     };
 
     const loadDataNourriture = async () => {
-        const reponse = await axios.get("http://localhost:3002/nourriture-animaux");
+        const reponse = await axios.get(BACKEND_URL + "/nourriture-animaux");
         setDataNourriture(reponse.data);
     };
 
@@ -80,7 +80,7 @@ const DetailsCompteRenduAnimaux = () => {
 
         if (token) {
             try {
-                const reponse = axios.post(`http://localhost:3002/ajout-soins/${prenom}`, formData, { headers })
+                const reponse = axios.post(BACKEND_URL + `/ajout-soins/${prenom}`, formData, { headers })
                 if (reponse) {
                     alert(`Compte rendu pour l'animal ${animal.prenom} envoyé avec succès`);
                     date_soins.current.value = "";
