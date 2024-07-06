@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Footer from '../composants/Footer';
 import BarreDashboardAdmin from '../composants/BarreDashboardAdmin';
+import { BACKEND_URL } from '../Constante';
 
 const DetailsModificationPersonnels = () => {
 

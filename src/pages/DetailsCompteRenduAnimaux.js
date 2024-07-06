@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 import BarreDashboardVeterinaire from '../composants/BarreDashboardVeterinaire';
 import { useNavigate } from 'react-router-dom';
+import { BACKEND_URL } from '../Constante';
 
 const DetailsCompteRenduAnimaux = () => {
 

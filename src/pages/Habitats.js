@@ -4,6 +4,7 @@ import Footer from '../composants/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BACKEND_URL } from '../Constante';
 
 const Habitats = () => {
 

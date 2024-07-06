@@ -3,6 +3,7 @@ import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
 import { useState, useRef } from 'react';
 import axios from 'axios';
+import { BACKEND_URL } from '../Constante';
 
 const Contact = () => {
 

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import BarreDashboardAdmin from '../composants/BarreDashboardAdmin';
 import Footer from '../composants/Footer';
+import { BACKEND_URL } from '../Constante';
 
 const DetailsModificationAnimaux = () => {
 

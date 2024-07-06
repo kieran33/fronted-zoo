@@ -5,6 +5,7 @@ import axios from 'axios';
 import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
 import { Link } from 'react-router-dom';
+import { BACKEND_URL } from '../Constante';
 
 const DetailsHabitats = () => {
 
