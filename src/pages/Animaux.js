@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
+import { BACKEND_URL } from '../constante.js'
 
 const Animaux = () => {
 
