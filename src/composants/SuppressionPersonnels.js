@@ -11,7 +11,7 @@ const SuppressionPersonnels = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/personnels");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/personnels");
         setData(reponse.data);
     };
 
@@ -29,7 +29,7 @@ const SuppressionPersonnels = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement ce compte personnel ?")) {
-                axios.delete(BACKEND_URL + `/personnels/supprimer/${id}`, { headers });
+                axios.delete(`https://backend-zoo-production.up.railway.app/personnels/supprimer/${id}`, { headers });
             };
         } else {
             alert("Vous n'êtes pas autorisé à effectuer cette action");

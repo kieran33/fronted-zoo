@@ -32,7 +32,7 @@ const Contact = () => {
         e.preventDefault();
 
         try {
-            const reponse = axios.post(BACKEND_URL + '/envoyer-questions', nouvelleQuestion, {
+            const reponse = axios.post('https://backend-zoo-production.up.railway.app/envoyer-questions', nouvelleQuestion, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

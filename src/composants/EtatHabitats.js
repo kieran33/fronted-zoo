@@ -11,7 +11,7 @@ const EtatHabitats = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setData(reponse.data);
     };
 
@@ -34,7 +34,7 @@ const EtatHabitats = () => {
                     <div className="animal" key={index}>
                         <div className="div_zoo_etat" >
                             <img className="image_zoo_animaux_etat"
-                                src={BACKEND_URL + `/image/${habitat.image}`}
+                                src={`https://backend-zoo-production.up.railway.app/image/${habitat.image}`}
                                 alt={habitat.nom}>
                             </img>
                             <h4 className="titre_service">Habitat : {habitat.nom}</h4>

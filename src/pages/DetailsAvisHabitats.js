@@ -21,7 +21,7 @@ const DetailsAvisHabitats = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setData(reponse.data);
     };
 
@@ -69,7 +69,7 @@ const DetailsAvisHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(BACKEND_URL + `/avis-habitats/${id}`, formData, { headers })
+                const reponse = axios.put(`https://backend-zoo-production.up.railway.app/avis-habitats/${id}`, formData, { headers })
                 if (reponse) {
                     alert(`Avis pour l'état de l'habitat ${habitat.nom} envoyé avec succès`);
                     etat.current.value = "";

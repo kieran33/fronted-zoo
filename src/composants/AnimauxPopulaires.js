@@ -15,7 +15,7 @@ const AnimauxPopulaires = () => {
     const [dataAnimaux, setDataAnimaux] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/animaux");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/animaux");
         setData(reponse.data);
     };
 
@@ -24,7 +24,7 @@ const AnimauxPopulaires = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(BACKEND_URL + '/vues-animaux')
+        axios.get('https://backend-zoo-production.up.railway.app/vues-animaux')
             .then(animaux => setDataAnimaux(animaux.data))
             .catch(err => console.log(err))
     }, []);
@@ -70,7 +70,7 @@ const AnimauxPopulaires = () => {
                                         {
                                             dataAnimal.prenom === animal.prenom ?
                                                 <img className="image_zoo_animaux_etat"
-                                                    src={BACKEND_URL + `/image/${animal.image}`}
+                                                    src={`https://backend-zoo-production.up.railway.app/image/${animal.image}`}
                                                     alt={animal.prenom}
                                                 >
                                                 </img>

@@ -59,7 +59,7 @@ const AjoutServices = () => {
         formData.append("image", nouveauService.image);
 
         if (token) {
-            const reponse = axios.post(BACKEND_URL + "/ajout-services", formData, { headers })
+            const reponse = axios.post("https://backend-zoo-production.up.railway.app/ajout-services", formData, { headers })
             /*.then(reponse => {
                 console.log(reponse.data);
             })

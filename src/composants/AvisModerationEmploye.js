@@ -14,7 +14,7 @@ const AvisModerationEmploye = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/avis-non-verif')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/avis-non-verif')
         setData(reponse.data)
     }
 
@@ -32,7 +32,7 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement cet avis ?")) {
-                axios.delete(BACKEND_URL + `/supprimer/avis-non-verif/${id}`, { headers });
+                axios.delete(`https://backend-zoo-production.up.railway.app/supprimer/avis-non-verif/${id}`, { headers });
                 setTimeout(() => loadData(), 500);
             }
         } else {
@@ -50,7 +50,7 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement tous ces avis ?")) {
-                axios.delete(BACKEND_URL + `/supprimer/avis-verif`, { headers });
+                axios.delete(`https://backend-zoo-production.up.railway.app/supprimer/avis-verif`, { headers });
                 setTimeout(() => loadData(), 500);
             }
         } else {
@@ -69,10 +69,10 @@ const AvisModerationEmploye = () => {
 
         if (token) {
             try {
-                const reponse = await axios.post(BACKEND_URL + '/ajout-avis-verif', { pseudo, message }, { headers });
+                const reponse = await axios.post('https://backend-zoo-production.up.railway.app/ajout-avis-verif', { pseudo, message }, { headers });
                 alert('Avis approuvé avec succès')
                 if (reponse.data) {
-                    axios.delete(BACKEND_URL + `/supprimer/avis-non-verif/${id}`, { headers });
+                    axios.delete(`https://backend-zoo-production.up.railway.app/supprimer/avis-non-verif/${id}`, { headers });
                     setTimeout(() => loadData(), 500);
                 }
             } catch (error) {

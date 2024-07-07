@@ -20,7 +20,7 @@ const AjoutAnimaux = () => {
     });
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setData(reponse.data);
     };
 
@@ -82,9 +82,9 @@ const AjoutAnimaux = () => {
 
         if (token) {
             try {
-                const reponse = axios.post(BACKEND_URL + "/ajout-animaux", formData, { headers })
+                const reponse = axios.post("https://backend-zoo-production.up.railway.app/ajout-animaux", formData, { headers })
                 if (reponse) {
-                    const reponse_mongoDB = axios.post(BACKEND_URL + "/ajout-animaux-vues", { prenomAnimal })
+                    const reponse_mongoDB = axios.post("https://backend-zoo-production.up.railway.app/ajout-animaux-vues", { prenomAnimal })
                     if (reponse_mongoDB) {
                         alert(`Animal ${nouvelAnimal.prenom} ajouté avec succès`);
                         prenom.current.value = "";

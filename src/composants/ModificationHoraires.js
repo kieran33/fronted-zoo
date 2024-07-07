@@ -11,7 +11,7 @@ const ModificationHoraires = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/horaires");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/horaires");
         setData(reponse.data);
     };
 

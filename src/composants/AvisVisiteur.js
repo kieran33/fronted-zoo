@@ -9,7 +9,7 @@ const AvisVisiteur = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/avis-verif')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/avis-verif')
         setData(reponse.data)
     }
 

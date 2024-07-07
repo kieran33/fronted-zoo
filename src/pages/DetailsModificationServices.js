@@ -23,7 +23,7 @@ const DetailsModificationServices = () => {
     const image = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/services");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/services");
         setData(reponse.data);
     };
 
@@ -77,7 +77,7 @@ const DetailsModificationServices = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(BACKEND_URL + `/services/modifier/${id}`, formData, { headers })
+                const reponse = axios.put(`https://backend-zoo-production.up.railway.app/services/modifier/${id}`, formData, { headers })
                 if (reponse) {
                     alert(`Le service ${service.nom} a été modifié avec succès`);
                 }

@@ -30,17 +30,17 @@ const DetailsAnimaux = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/animaux')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/animaux')
         setData(reponse.data);
     };
 
     const loadDataHabitat = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/habitats')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/habitats')
         setDataHabitat(reponse.data);
     };
 
     const loadDataEtat = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/soins-animaux')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/soins-animaux')
         setDataEtat(reponse.data);
     };
 
@@ -69,7 +69,7 @@ const DetailsAnimaux = () => {
 
     const augmenterVue = () => {
         try {
-            axios.put(BACKEND_URL + `/augmenter-vues-animal`, { prenomNouvelAnimal })
+            axios.put(`https://backend-zoo-production.up.railway.app/augmenter-vues-animal`, { prenomNouvelAnimal })
         } catch (error) {
             console.log(error);
         }
@@ -100,7 +100,7 @@ const DetailsAnimaux = () => {
                 <div className="animal" >
                     <h2 className="titre_service">{dataAnimal.prenom}</h2>
                     <img className="image_zoo_details"
-                        src={BACKEND_URL + `/image/${dataAnimal.image}`}
+                        src={`https://backend-zoo-production.up.railway.app/image/${dataAnimal.image}`}
                         alt={dataAnimal.prenom}>
                     </img>
                     <p className="paragraphe">{dataAnimal.description}</p>
@@ -132,7 +132,7 @@ const DetailsAnimaux = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={BACKEND_URL + `/image/${habitat.image}`}
+                                            src={`https://backend-zoo-production.up.railway.app/image/${habitat.image}`}
                                             alt={habitat.nom}>
                                         </img>
                                     </Link>
@@ -147,7 +147,7 @@ const DetailsAnimaux = () => {
                             <div className="animal" key={index}>
                                 <div className="div_zoo_animaux">
                                     <img className="image_zoo_animaux"
-                                        src={BACKEND_URL + `/image/${animal.image}`}
+                                        src={`https://backend-zoo-production.up.railway.app/image/${animal.image}`}
                                         alt={animal.prenom}
                                         onClick={() => {
                                             setPrenomNouvelAnimal(animal.prenom)
@@ -166,7 +166,7 @@ const DetailsAnimaux = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={BACKEND_URL + `/image/${habitat.image}`}
+                                            src={`https://backend-zoo-production.up.railway.app/image/${habitat.image}`}
                                             alt={habitat.nom}>
                                         </img>
                                     </Link>

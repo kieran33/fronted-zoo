@@ -41,7 +41,7 @@ const CreationPersonnels = () => {
         if (token) {
             if ((contientChiffres === true) && (contientLettres === true)) {
                 try {
-                    const reponse = await axios.post(BACKEND_URL + "/creer-personnels", nouveauxPersonnels, {
+                    const reponse = await axios.post("https://backend-zoo-production.up.railway.app/creer-personnels", nouveauxPersonnels, {
                         headers: {
                             "Content-Type": "application/json",
                             "Authorization": token

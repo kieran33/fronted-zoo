@@ -12,7 +12,7 @@ const AvisHabitats = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setData(reponse.data);
     };
 
@@ -36,7 +36,7 @@ const AvisHabitats = () => {
                         <div className="div_zoo_animaux">
                             <Link to={`/dashboard-veterinaire/aivs-habitats/${habitat.id}`} style={{ opacity: "1" }}>
                                 <img className="image_zoo_animaux"
-                                    src={BACKEND_URL + `/image/${habitat.image}`}
+                                    src={`https://backend-zoo-production.up.railway.app/image/${habitat.image}`}
                                     alt={habitat.nom}>
                                 </img>
                             </Link>

@@ -58,7 +58,7 @@ const AjoutHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.post(BACKEND_URL + "/ajout-habitats", formData, { headers })
+                const reponse = axios.post("https://backend-zoo-production.up.railway.app/ajout-habitats", formData, { headers })
                 if (reponse) {
                     alert(`Nouvel habitat ${nouvelHabitat.nom} ajouté avec succès`);
                     nom.current.value = "";

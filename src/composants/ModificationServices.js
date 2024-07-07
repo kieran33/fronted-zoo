@@ -12,7 +12,7 @@ const ModificationServices = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/services");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/services");
         setData(reponse.data);
     };
 
@@ -36,7 +36,7 @@ const ModificationServices = () => {
                         <div className="div_zoo_service">
                             <Link to={`/dashboard-admin/modifier-services/${service.id}`} style={{ opacity: "1" }}>
                                 <img className="image_zoo_service"
-                                    src={BACKEND_URL + `/image/${service.image}`}
+                                    src={`https://backend-zoo-production.up.railway.app/image/${service.image}`}
                                     alt={service.nom}>
                                 </img>
                             </Link>

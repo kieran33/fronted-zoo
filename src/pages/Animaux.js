@@ -7,8 +7,6 @@ import Footer from '../composants/Footer';
 
 const Animaux = () => {
 
-    console.log('backend_url' + BACKEND_URL);
-
     const role = localStorage.getItem('role');
 
     const navigate = useNavigate();
@@ -19,7 +17,7 @@ const Animaux = () => {
     const [id, setId] = useState("");
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/animaux");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/animaux");
         setData(reponse.data);
     };
 
@@ -45,7 +43,7 @@ const Animaux = () => {
 
     const augmenterVue = () => {
         try {
-            axios.put(BACKEND_URL + `/augmenter-vues-animal`, { prenom })
+            axios.put(`https://backend-zoo-production.up.railway.app/augmenter-vues-animal`, { prenom })
         } catch (error) {
             console.log(error);
         }
@@ -73,7 +71,7 @@ const Animaux = () => {
                     <div className="animal" key={index}>
                         <div className="div_zoo_animaux" >
                             <img className="image_zoo_animaux"
-                                src={BACKEND_URL + `/image/${animal.image}`}
+                                src={`https://backend-zoo-production.up.railway.app/image/${animal.image}`}
                                 alt={animal.prenom}
                                 onClick={() => {
                                     setPrenom(animal.prenom)

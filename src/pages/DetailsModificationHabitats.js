@@ -21,7 +21,7 @@ const DetailsModificationHabitats = () => {
     const image = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setData(reponse.data);
     };
 
@@ -75,7 +75,7 @@ const DetailsModificationHabitats = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(BACKEND_URL + `/habitats/modifier/${id}`, formData, { headers })
+                const reponse = axios.put(`https://backend-zoo-production.up.railway.app/habitats/modifier/${id}`, formData, { headers })
                 if (reponse) {
                     alert(`Habitat ${habitat.nom} modifié avec succès`);
                 }

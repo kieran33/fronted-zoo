@@ -23,7 +23,7 @@ const DetailsAjoutNourritureAnimaux = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/animaux");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/animaux");
         setData(reponse.data);
     };
 
@@ -75,7 +75,7 @@ const DetailsAjoutNourritureAnimaux = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(BACKEND_URL + `/ajout-nourriture/${prenom}`, formData, { headers })
+                const reponse = axios.put(`https://backend-zoo-production.up.railway.app/ajout-nourriture/${prenom}`, formData, { headers })
                 if (reponse) {
                     alert(`Nourriture pour l'animal ${animal.prenom} ajouté avec succès`);
                     nourriture.current.value = "";

@@ -16,7 +16,7 @@ const QuestionsVisiteurs = () => {
     const token = localStorage.getItem("token");
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/questions')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/questions')
         setData(reponse.data)
     }
 

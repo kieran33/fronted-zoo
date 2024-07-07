@@ -11,7 +11,7 @@ const ModificationPersonnels = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/personnels");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/personnels");
         setData(reponse.data);
     };
 

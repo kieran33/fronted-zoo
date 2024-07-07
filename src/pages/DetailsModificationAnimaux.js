@@ -28,12 +28,12 @@ const DetailsModificationAnimaux = () => {
     const image = useRef("");
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/animaux");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/animaux");
         setData(reponse.data);
     };
 
     const loadDataHabitat = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/habitats");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/habitats");
         setDataHabitat(reponse.data);
     };
 
@@ -93,12 +93,12 @@ const DetailsModificationAnimaux = () => {
         formData.append("image", animal.image);
 
         if (token) {
-            const reponse = axios.put(BACKEND_URL + `/animaux/modifier/${id}`, formData, { headers })
+            const reponse = axios.put(`https://backend-zoo-production.up.railway.app/animaux/modifier/${id}`, formData, { headers })
 
             if (reponse) {
-                axios.put(BACKEND_URL + `/animaux-nourriture/modifier/${prenom}`, { nouveauPrenom })
-                axios.put(BACKEND_URL + `/animaux-soins/modifier/${prenom}`, { nouveauPrenom })
-                await axios.put(BACKEND_URL + `/modifier-animaux-vues/${prenom}`, { nouveauPrenom })
+                axios.put(`https://backend-zoo-production.up.railway.app/animaux-nourriture/modifier/${prenom}`, { nouveauPrenom })
+                axios.put(`https://backend-zoo-production.up.railway.app/animaux-soins/modifier/${prenom}`, { nouveauPrenom })
+                await axios.put(`https://backend-zoo-production.up.railway.app/modifier-animaux-vues/${prenom}`, { nouveauPrenom })
                 alert(`Animal ${animal.prenom} modifié avec succès`);
             } else {
                 alert("La requête à échoué");

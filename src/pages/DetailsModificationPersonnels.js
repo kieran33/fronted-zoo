@@ -21,7 +21,7 @@ const DetailsModificationPersonnels = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/personnels");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/personnels");
         setData(reponse.data);
     };
 
@@ -68,7 +68,7 @@ const DetailsModificationPersonnels = () => {
 
         if (token) {
             try {
-                const reponse = axios.put(BACKEND_URL + `/personnels/modifier/${id}`, personnel, { headers })
+                const reponse = axios.put(`https://backend-zoo-production.up.railway.app/personnels/modifier/${id}`, personnel, { headers })
                 if (reponse) {
                     alert(`Compte personnel ${personnel.nom_utilisateur} modifié avec succès`);
                 }

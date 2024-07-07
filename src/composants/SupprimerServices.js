@@ -13,7 +13,7 @@ const SupprimerServices = () => {
     const [data, setData] = useState([]);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + "/services");
+        const reponse = await axios.get("https://backend-zoo-production.up.railway.app/services");
         setData(reponse.data);
     };
 
@@ -31,7 +31,7 @@ const SupprimerServices = () => {
 
         if (token) {
             if (window.confirm("Êtes-vous sûr de vouloir supprimer définitivement ce service ?")) {
-                axios.delete(BACKEND_URL + `/services/supprimer/${id}`, { headers });
+                axios.delete(`https://backend-zoo-production.up.railway.app/services/supprimer/${id}`, { headers });
                 //setTimeout(() => loadData(), 500);
             };
         } else {
@@ -58,7 +58,7 @@ const SupprimerServices = () => {
                     <div className="animal" key={index}>
                         <div className="div_zoo_service" style={{ marginBottom: "40px" }}>
                             <img className="image_zoo_service"
-                                src={BACKEND_URL + `/image/${service.image}`}
+                                src={`https://backend-zoo-production.up.railway.app/image/${service.image}`}
                                 alt={service.nom}>
                             </img>
                             <div className="text_zoo" style={{ textTransform: 'capitalize' }}>{service.nom}</div>

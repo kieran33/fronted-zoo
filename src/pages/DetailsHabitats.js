@@ -17,12 +17,12 @@ const DetailsHabitats = () => {
     const idNombre = Number(id);
 
     const loadData = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/habitats')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/habitats')
         setData(reponse.data);
     }
 
     const loadDataAnimaux = async () => {
-        const reponse = await axios.get(BACKEND_URL + '/animaux')
+        const reponse = await axios.get('https://backend-zoo-production.up.railway.app/animaux')
         setDataAnimaux(reponse.data);
     }
 
@@ -44,7 +44,7 @@ const DetailsHabitats = () => {
                 <div className="animal" >
                     <h2 className="titre_service">{dataHabitat.nom}</h2>
                     <img className="image_zoo_details"
-                        src={BACKEND_URL + `/image/${dataHabitat.image}`}
+                        src={`https://backend-zoo-production.up.railway.app/image/${dataHabitat.image}`}
                         alt={dataHabitat.nom}>
                     </img>
                     <p className="paragraphe">{dataHabitat.description}</p>
@@ -63,7 +63,7 @@ const DetailsHabitats = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/animaux/${animal.id}/${animal.prenom}`} style={{ opacity: "1" }}>
                                         <img className="image_zoo_animaux"
-                                            src={BACKEND_URL + `/image/${animal.image}`}
+                                            src={`https://backend-zoo-production.up.railway.app/image/${animal.image}`}
                                             alt={animal.prenom}>
                                         </img>
                                     </Link>
@@ -79,7 +79,7 @@ const DetailsHabitats = () => {
                                 <div className="div_zoo_animaux" >
                                     <Link to={`/habitats/${habitat.id}`} style={{ opacity: "1" }} >
                                         <img className="image_zoo_animaux"
-                                            src={BACKEND_URL + `/image/${habitat.image}`}
+                                            src={`https://backend-zoo-production.up.railway.app/image/${habitat.image}`}
                                             alt={habitat.nom}
                                             onClick={() => {
                                                 setTimeout(() => {
