@@ -7,7 +7,7 @@ import { BACKEND_URL } from '../Constante';
 
 const Animaux = () => {
 
-    console.log(BACKEND_URL)
+    console.log('backend_url' + BACKEND_URL);
 
     const role = localStorage.getItem('role');
 
