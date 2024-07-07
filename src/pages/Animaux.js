@@ -8,7 +8,6 @@ import { BACKEND_URL } from '../Constante';
 const Animaux = () => {
 
     console.log('backend_url' + BACKEND_URL);
-    console.log('test vercel')
 
     const role = localStorage.getItem('role');
 
