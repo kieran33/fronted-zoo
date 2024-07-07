@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import BarreDashboardEmploye from './BarreDashboardEmploye';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const QuestionsVisiteurs = () => {
 

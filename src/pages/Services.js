@@ -3,7 +3,7 @@ import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const Services = () => {
 

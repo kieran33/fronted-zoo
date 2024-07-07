@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../composants/Footer';
 import BarreDashboardEmploye from '../composants/BarreDashboardEmploye';
 import { useNavigate } from 'react-router-dom';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const DetailsModificationServicesEmploye = () => {
 

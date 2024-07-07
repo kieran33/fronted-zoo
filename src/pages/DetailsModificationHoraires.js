@@ -5,7 +5,7 @@ import Footer from '../composants/Footer';
 import Navigation from '../composants/Navigation';
 import BarreDashboardAdmin from '../composants/BarreDashboardAdmin';
 import { useParams, useNavigate } from 'react-router-dom';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const DetailsModificationHoraires = () => {
 

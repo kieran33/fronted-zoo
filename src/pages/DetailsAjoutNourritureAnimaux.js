@@ -5,7 +5,7 @@ import Navigation from '../composants/Navigation';
 import Footer from '../composants/Footer';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const DetailsAjoutNourritureAnimaux = () => {
 

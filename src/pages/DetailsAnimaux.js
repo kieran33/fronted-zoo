@@ -8,7 +8,7 @@ import Famille from '../image/famille_animaux.png';
 import Habitat from '../image/habitat_animaux.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { BACKEND_URL } from '../Constante';
+//import { BACKEND_URL } from '../Constante';
 
 const DetailsAnimaux = () => {
 
