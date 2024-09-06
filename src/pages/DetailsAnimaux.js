@@ -55,17 +55,15 @@ const DetailsAnimaux = () => {
             setDataAnimal(data.find(animal => animal.id === idNombre));
             setDataEtatAnimal(dataEtat.filter(animal => animal.prenom === prenom));
         }
-    }, [data]);
+    }, [data, dataEtat]);
 
-    console.log('dataEtatAnimal', dataEtatAnimal);
+    console.log('dataAnimal', dataAnimal);
 
     useEffect(() => {
         if (dataEtatAnimal.length > 0) {
             setDernierSoins(dataEtatAnimal[dataEtatAnimal.length - 1]);
         }
     }, [dataEtatAnimal])
-
-    console.log(dernierSoins)
 
     const augmenterVue = () => {
         try {
