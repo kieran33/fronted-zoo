@@ -65,7 +65,7 @@ const Animaux = () => {
     return (
         <>
             <Navigation />
-            <h2 className="titre_service">Nos animaux</h2>
+            <h1 className="titre_service">Nos animaux</h1>
             <div className="centrer">
                 {dataTrier.map((animal, index) => (
                     <div className="animal" key={index}>

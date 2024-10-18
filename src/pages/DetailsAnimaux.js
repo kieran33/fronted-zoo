@@ -101,7 +101,7 @@ const DetailsAnimaux = () => {
                         src={`https://backend-zoo-production.up.railway.app/image/${dataAnimal.image}`}
                         alt={dataAnimal.prenom}>
                     </img>
-                    <p className="paragraphe">{dataAnimal.description}</p>
+                    <p className="paragraphe" style={{marginTop: "50px"}}>{dataAnimal.description}</p>
                     <div className="centrer">
                         <div className="service" style={{ margin: "25px" }}>
                             <img src={Famille} alt={Famille}></img>
